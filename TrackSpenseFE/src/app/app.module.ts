@@ -13,6 +13,7 @@ import { HomeComponent } from './home/home.component';
 import { TransactionsComponent } from './transactions/transactions.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { AddCategoryComponent } from './add-category/add-category.component';
+import { AddTransactionComponent } from './add-transaction/add-transaction.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { AddCategoryComponent } from './add-category/add-category.component';
     HomeComponent,
     TransactionsComponent,
     CategoriesComponent,
-    AddCategoryComponent
+    AddCategoryComponent,
+    AddTransactionComponent,
   ],
   imports: [
     BrowserModule,
@@ -31,12 +33,15 @@ import { AddCategoryComponent } from './add-category/add-category.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
+      { path: '', component: HomeComponent },
       { path: 'login', component: LoginpageComponent },
       { path: 'register', component: RegisterpageComponent },
-      { path: '', component: HomeComponent },
+      { path: 'add-transaction', component: AddTransactionComponent },
+      { path: 'transactions', component: TransactionsComponent },
+      { path: 'categories', component: CategoriesComponent },
     ]),
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

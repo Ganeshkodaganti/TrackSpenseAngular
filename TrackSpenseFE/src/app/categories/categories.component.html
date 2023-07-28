@@ -1,1 +1,46 @@
-<p>categories works!</p>
+<div class="container col-sm-12">
+  <form>
+    <div class="row">
+      <div class="col-sm-12 mx-t3 mb-4">
+        <h2 class="text-center">Add Category</h2>
+      </div>
+      <hr />
+
+      <div class="col-sm-12 form-group">
+        <label for="categoryname">CategoryName</label>
+        <input
+          type="text"
+          class="form-control"
+          name="categoryname"
+          id="categoryname"
+          placeholder="Add a new Category"
+          required
+          [(ngModel)]="addCategoryCredentials.categoryName"
+        />
+      </div>
+      <div class="col-sm-12 form-group">
+        <button class="btn btn-primary float-right" (click)="addCategory()">
+          Add
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+<div class="row">
+  <div class="col-sm-12 m-1" *ngFor="let category of categories">
+    <div class="card">
+      <div
+        class="card-header d-flex justify-content-between align-items-center"
+      >
+        <h3>{{ category.categoryName }}</h3>
+        <button
+          class="btn btn-sm btn-danger delete-icon"
+          (click)="deleteCategory(category)"
+        >
+          <i class="fa fa-trash" aria-hidden="true"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

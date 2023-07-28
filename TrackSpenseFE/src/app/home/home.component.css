@@ -26,3 +26,7 @@ footer {
     height: auto;
   }
 }
+
+.row {
+  justify-content: space-between;
+}
